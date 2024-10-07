@@ -3,17 +3,20 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Install phase"
+      - echo "Nothing to install in this simple build."
+
   pre_build:
     commands:
-      - echo "Pre-build phase"
+      - echo "Preparing for build."
+
   build:
     commands:
-      - echo "Build phase: Packaging files"
+      - echo "Building project... (In this case, no build is needed for static HTML)."
+
   post_build:
     commands:
-      - echo "Post-build phase: Build completed successfully"
+      - echo "Build completed!"
 
 artifacts:
   files:
-    - build.zip  # Specify the name of the generated zip file
+    - '**/*'  # Specify the file you want to store as an artifact
