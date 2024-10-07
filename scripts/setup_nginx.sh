@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ensure the script itself has execute permissions
+chmod +x /opt/codedeploy-agent/deployment-root/deployment-archive/scripts/setup_nginx.sh
+
 # Start Nginx
 sudo systemctl start nginx
 
