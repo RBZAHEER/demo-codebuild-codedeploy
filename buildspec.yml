@@ -3,17 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "install phase"
+      - echo "Install phase"
   pre_build:
     commands:
       - echo "Pre-build phase"
   build:
     commands:
-      - echo "Build phase: packaging files"
+      - echo "Build phase: Packaging files"
+      - zip -r build.zip index.html scripts/  # Include any other files or directories needed
   post_build:
     commands:
       - echo "Post-build phase: Build completed successfully"
 
 artifacts:
   files:
-    - **/*
+    - build.zip  # Specify the name of the generated zip file
