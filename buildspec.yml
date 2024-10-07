@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "install phase"
+  pre_build:
+    commands:
+      - echo "Pre-build phase"
+  build:
+    commands:
+      - echo "Build phase: packaging files"
+  post_build:
+    commands:
+      - echo "Post-build phase: Build completed successfully"
+
+artifacts:
+  files:
+    - **/*
