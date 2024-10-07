@@ -10,7 +10,6 @@ phases:
   build:
     commands:
       - echo "Build phase: Packaging files"
-      - zip -r build.zip index.html scripts/  # Include any other files or directories needed
   post_build:
     commands:
       - echo "Post-build phase: Build completed successfully"
