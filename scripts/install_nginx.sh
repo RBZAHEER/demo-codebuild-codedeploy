@@ -13,3 +13,11 @@ systemctl start nginx
 
 # Enable Nginx to start on boot
 systemctl enable nginx
+
+# Check if Nginx started successfully
+if systemctl status nginx | grep -q "active (running)"; then
+    echo "Nginx is running."
+else
+    echo "Failed to start Nginx."
+    exit 1
+fi
