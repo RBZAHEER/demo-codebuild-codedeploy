@@ -3,11 +3,16 @@ os: linux
 files:
   - source: index.html
     destination: /tmp/index.html
+  - source: appspec.yml
+    destination: /tmp/appspec.yml
+  - source: scripts/**
+    destination: /tmp/scripts/
+
 hooks:
   AfterInstall:
-    - location: scripts/install_nginx.sh
+    - location: /tmp/scripts/install_nginx.sh
       timeout: 300
       runas: root
-    - location: scripts/deploy_nginx.sh
+    - location: /tmp/scripts/deploy_nginx.sh
       timeout: 300
       runas: root
