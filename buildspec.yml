@@ -19,4 +19,9 @@ phases:
 
 artifacts:
   files:
-    - '**/*'  # Specify the file you want to store as an artifact
+    - '**/*'
+  discard-paths: yes
+  base-directory: /path/to/your/project
+  # Exclude the .git directory
+  - '**/*'
+  - '!**/.git/**'
