@@ -21,3 +21,4 @@ artifacts:
   files:
     - '**/*'          # Include all files
     - '!**/.git/**'   # Exclude the .git directory
+    - '!appspec.yml'   # Exclude the appspec.yml file
