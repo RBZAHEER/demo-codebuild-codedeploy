@@ -1,23 +1,12 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo "Nothing to install in this simple build."
-
   pre_build:
     commands:
-      - echo "Preparing for build."
-
+      - echo Pre-build phase
   build:
     commands:
-      - echo "Building project... (In this case, no build is needed for static HTML)."
-
+      - echo Build phase
   post_build:
     commands:
-      - echo "Build completed!"
-
-artifacts:
-  files:
-    - '**/*'          # Include all files
-    - '!**/.git/**'   # Exclude the .git directory
+      - echo Post-build phase
