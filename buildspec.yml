@@ -10,3 +10,8 @@ phases:
   post_build:
     commands:
       - echo Post-build phase
+artifacts:
+  files:
+    - index.html
+    - appspec.yml
+    - scripts/**  # Includes all files in the scripts folder
