@@ -1,3 +1,6 @@
+# Clear the existing content in the destination
+rm -rf /var/www/html/*
+
 #!/bin/bash
 
 # Ensure the script itself has execute permissions
