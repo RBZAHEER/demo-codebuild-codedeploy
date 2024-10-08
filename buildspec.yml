@@ -19,9 +19,5 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
-  discard-paths: yes
-  base-directory: /path/to/your/project
-  # Exclude the .git directory
-  - '**/*'
-  - '!**/.git/**'
+    - '**/*'          # Include all files
+    - '!**/.git/**'   # Exclude the .git directory
