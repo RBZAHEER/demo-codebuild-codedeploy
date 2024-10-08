@@ -1,12 +1,11 @@
-chmod +x scripts/install_nginx.sh
-chmod +x scripts/deploy_nginx.sh
-
 #!/bin/bash
 # Update package index
 yum update -y
 
-# Install Nginx
-yum install -y nginx
+# Install Nginx if not already installed
+if ! command -v nginx &> /dev/null; then
+    yum install -y nginx
+fi
 
 # Start Nginx service
 systemctl start nginx
