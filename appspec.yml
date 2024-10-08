@@ -5,8 +5,10 @@ files:
     destination: /tmp/index.html
   - source: appspec.yml
     destination: /tmp/appspec.yml
-  - source: scripts/**
-    destination: /tmp/scripts/
+  - source: scripts/install_nginx.sh
+    destination: /tmp/scripts/install_nginx.sh
+  - source: scripts/deploy_nginx.sh
+    destination: /tmp/scripts/deploy_nginx.sh
 
 hooks:
   AfterInstall:
