@@ -19,5 +19,6 @@ phases:
 
 artifacts:
   files:
-    - '**/*'          # Include all files
-    - '!**/.git/**'   # Exclude the .git folder
+    - 'index.html'          
+    - 'appspec.yml' 
+    - 'scripts/**'  
