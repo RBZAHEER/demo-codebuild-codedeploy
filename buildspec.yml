@@ -8,6 +8,8 @@ phases:
     commands:
       - echo "Building the project..."
       - mkdir -p output/scripts
+      - echo "Contents of scripts directory:"
+      - ls scripts
       - cp index.html output/
       - cp appspec.yml output/
       - cp scripts/setup_nginx.sh output/scripts/
