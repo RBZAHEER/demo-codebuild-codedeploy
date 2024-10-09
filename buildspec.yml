@@ -3,16 +3,20 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Creating Build"
+      - echo "Nothing to install in this simple build."
+
+  pre_build:
+    commands:
+      - echo "Preparing for build."
+
   build:
     commands:
-      - echo "Building the project..."
-      - mkdir -p output/scripts
-      - echo "Contents of scripts directory:"
-      - ls scripts
-      - cp index.html output/
-      - cp appspec.yml output/
-      - cp scripts/setup_nginx.sh output/scripts/
+      - echo "Building project... (In this case, no build is needed for static HTML)."
+
+  post_build:
+    commands:
+      - echo "Build completed!"
+
 artifacts:
   files:
-    - output/*
+    - '**/*'  # Specify the file you want to store as an artifact
