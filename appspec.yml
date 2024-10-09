@@ -1,10 +1,14 @@
 version: 0.0
 os: linux
 files:
-  - source: output/
+  - source: index.html
     destination: /usr/share/nginx/html/
+  - source: appspec.yml
+    destination: /usr/share/nginx/html/
+  - source: scripts/**
+    destination: /home/ubuntu/scripts/  # Adjust as necessary for your setup
 hooks:
   AfterInstall:
-    - location: scripts/setup_nginx.sh
+    - location: /home/ubuntu/scripts/setup_nginx.sh
       timeout: 300
       runas: root
