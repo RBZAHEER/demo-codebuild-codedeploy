@@ -5,8 +5,12 @@ files:
     destination: /usr/share/nginx/html/
   - source: appspec.yml
     destination: /usr/share/nginx/html/
-  - source: scripts/**
-    destination: /home/ubuntu/scripts/  # Adjust as necessary for your setup
+  - source: scripts/setup_nginx.sh
+    destination: /home/ubuntu/scripts/setup_nginx.sh  # or another destination of your choice
+  # Add more scripts if you have more than one
+  # - source: scripts/another_script.sh
+  #   destination: /home/ubuntu/scripts/another_script.sh
+
 hooks:
   AfterInstall:
     - location: /home/ubuntu/scripts/setup_nginx.sh
