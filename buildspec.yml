@@ -1,18 +1,15 @@
 version: 0.2
 
 phases:
-  pre_build:
-    commands:
-      - echo Pre-build phase
+  install:
+      - echo "Creating Build"
   build:
     commands:
-      - echo Build phase
-  post_build:
-    commands:
-      - echo Post-build phase
+      - echo "Building the project..."
+      - mkdir -p output
+      - cp index.html output/
+      - cp appspec.yml output/
+      - cp scripts/setup_nginx.sh output/
 artifacts:
   files:
-    - index.html
-    - appspec.yml
-    - scripts/install_nginx.sh
-    - scripts/deploy_nginx.sh
+    - output/*
