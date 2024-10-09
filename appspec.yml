@@ -1,20 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: index.html
-    destination: /tmp/index.html
-  - source: appspec.yml
-    destination: /tmp/appspec.yml
-  - source: scripts/install_nginx.sh
-    destination: /tmp/scripts/install_nginx.sh
-  - source: scripts/deploy_nginx.sh
-    destination: /tmp/scripts/deploy_nginx.sh
-
+  - source: output/
+    destination: /usr/share/nginx/html/
 hooks:
   AfterInstall:
-    - location: /tmp/scripts/install_nginx.sh
-      timeout: 300
-      runas: root
-    - location: /tmp/scripts/deploy_nginx.sh
+    - location: scripts/setup_nginx.sh
       timeout: 300
       runas: root
