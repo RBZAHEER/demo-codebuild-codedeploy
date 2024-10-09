@@ -7,7 +7,7 @@ phases:
   build:
     commands:
       - echo "Building the project..."
-      - mkdir -p output
+      - mkdir -p output/scripts
       - cp index.html output/
       - cp appspec.yml output/
       - cp scripts/setup_nginx.sh output/scripts/
