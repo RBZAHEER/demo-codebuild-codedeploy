@@ -1,20 +1,22 @@
 #!/bin/bash
 
-# Grant execute permissions to this script (not necessary if already executed)
-chmod +x /home/ubuntu/scripts/setup_nginx.sh
+# Make script executable (optional if already set)
+chmod +x /home/ec2-user/scripts/setup_nginx.sh
 
-# Install Nginx
-apt update
-apt install -y nginx
+# Update package manager
+sudo yum update -y
 
-# Start Nginx and enable it to run on boot
-systemctl start nginx
-systemctl enable nginx 
+# Install Nginx if not already installed
+sudo yum install -y nginx
 
-# Ensure Nginx is running
+# Start and enable Nginx service
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+# Check Nginx status
 if systemctl status nginx | grep "active (running)"; then
-    echo "Nginx is running."
+    echo "✅ Nginx is running."
 else
-    echo "Failed to start Nginx."
-    exit 1  # Exit with an error code if Nginx fails to start
+    echo "❌ Failed to start Nginx."
+    exit 1
 fi
