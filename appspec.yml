@@ -1,11 +1,12 @@
 version: 0.0
 os: linux
+
 files:
   - source: index.html
     destination: /usr/share/nginx/html/
 
 hooks:
   AfterInstall:
-    - location: scripts/setup_nginx.sh  # Reference just the relative path
+    - location: scripts/setup_nginx.sh
       timeout: 300
       runas: root
